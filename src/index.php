@@ -13,19 +13,27 @@
 	<script>
 		$(document).ready(() => {
 			const el = document.getElementById("chairName");
-			let i = 0;
+			let i = 1;
 			el.addEventListener('click', () => {
-				if (++i > 9) {
-					window.location.href = "login.php";
+				if (++i > 5) {
+					document.getElementById('loginModal').style.display = 'block';
 				}
 			})
+
+			const e = document.getElementById('loginModal');
+			e.addEventListener('click', (event) => {
+				if (event.target === document.getElementById('loginModal')) {
+					document.getElementById('loginModal').style.display = 'none';
+					i = 0;
+				}
+			}, false);
 		});
 	</script>
 </head>
 
 <body>
 	<!-- header -->
-	<div class="bg-blue-300 w-full h-10">
+	<div class="bg-blue-200 w-full h-10">
 		<span class="text-3xl absolute left-[15%]">
 			帥哥個人網頁
 		</span>
@@ -142,7 +150,7 @@
 			?>
 		</div>
 
-		<div class="row-start-3 col-start-1 text-2xl">industry academy cooperation project</div>
+		<div class="row-start-3 col-start-1 text-2xl mt-5">industry academy cooperation project</div>
 		<div
 			class="grid grid-cols-1 content-start max-h-96 h-96 overflow-auto rounded-md bg-slate-200 border-8 border-slate-200 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
 			<?php
@@ -165,7 +173,7 @@
 			?>
 		</div>
 
-		<div class="row-start-3 col-start-2 text-2xl">NSTC project</div>
+		<div class="row-start-3 col-start-2 text-2xl mt-5">NSTC project</div>
 		<div
 			class="grid grid-cols-1 content-start max-h-96 h-96 overflow-auto rounded-md bg-slate-200 border-8 border-slate-200 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
 			<?php
@@ -191,7 +199,7 @@
 			?>
 		</div>
 
-		<div class="row-start-5 col-start-1 text-2xl">literature</div>
+		<div class="row-start-5 col-start-1 text-2xl mt-5">literature</div>
 		<div
 			class="row-start-6 grid grid-cols-1 content-start max-h-96 h-96 overflow-auto rounded-md bg-slate-200 border-8 border-slate-200 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
 			<?php
@@ -212,6 +220,39 @@
 		</div>
 	</div>
 
+	<div class="w-full h-full hidden fixed left-0 top-0 z-10 bg-black bg-opacity-70" id="loginModal">
+		<form class="bg-white shadow-md rounded relative px-8 pt-6 pb-8 mb-4 w-96 m-auto top-1/3" id="loginForm" method="POST" action="authentication.php">
+			<div class="mb-4">
+				<label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+					Username
+				</label>
+				<input
+					class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+					id="username" name="username" type="text" placeholder="Username">
+			</div>
+			<div class="mb-6">
+				<label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+					Password
+				</label>
+				<input
+					class="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+					id="password" name="password" type="password" placeholder="******">
+			</div>
+			<div class="flex items-center justify-between">
+				<input
+					class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+					type="submit" value="Sign In">
+				<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="https://youtu.be/pEg_d2f6myw">
+					Forgot Password?
+				</a>
+			</div>
+		</form>
+	</div>
+
+	<!-- footer -->
+	<div class="w-full h-10 bg-blue-200 mt-5 text-center">
+		&copy;2023 Feng Chia University. All rights reserved.
+	</div>
 
 	<?php
 	$conn->close();
