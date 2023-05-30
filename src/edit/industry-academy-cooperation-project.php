@@ -91,11 +91,11 @@
 			<form method="post" action="../upload/industry-academy-cooperation-project.php"
 				class="grid grid-cols-3 gap-5 grid-flow-row lg:grid-cols-3">
 
-				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1"
+				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1 hover:bg-blue-400"
 					onclick="toggleIndustryAcademyCooperationProject()">X</button>
 
-				<div class="col-span-full">
-					<label>title: <input type="text" id="editTitle" name="title" value=""
+				<div class="col-span-full mt-2">
+					<label>Title: <input type="text" id="editTitle" name="title" value=""
 							class="border border-black w-5/6"> </label>
 				</div>
 
@@ -119,7 +119,7 @@
 				<input class="hidden" type="text" id="editID" name="ID" value="">
 
 				<button type="submit" name="update"
-					class="w-[60px] bg-blue-200 absolute right-1 bottom-2">Submit</button>
+					class="row-start-3 col-start-2 bg-blue-200 hover:bg-blue-400">Submit</button>
 			</form>
 		</div>
 	</div>
@@ -138,11 +138,11 @@
 			<form method="post" action="../upload/industry-academy-cooperation-project.php"
 				class="grid grid-cols-3 gap-5 grid-flow-row lg:grid-cols-3">
 
-				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1"
+				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1 hover:bg-blue-400"
 					onclick="toggleInsertModal()">X</button>
 
-				<div class="col-span-full">
-					<label>title: <input type="text" name="title" class="border border-black w-5/6"> </label>
+				<div class="col-span-full mt-2">
+					<label>Title: <input type="text" name="title" class="border border-black w-5/6"> </label>
 				</div>
 
 				<div>
@@ -157,7 +157,7 @@
 					<label>Position: <input type="text" name="position" class="border border-black"> </label>
 				</div>
 
-				<button type="submit" name="insert" class="row-start-3 col-start-2 justify-self-stretch bg-blue-200">
+				<button type="submit" name="insert" class="row-start-3 col-start-2 justify-self-stretch bg-blue-200 hover:bg-blue-400">
 					insert
 				</button>
 			</form>

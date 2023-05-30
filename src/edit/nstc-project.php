@@ -92,12 +92,17 @@
 			<form method="post" action="../upload/nstc-project.php" 
 				class="grid grid-cols-3 gap-5 grid-flow-row lg:grid-cols-3">
 
-				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1"
+				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1 hover:bg-blue-400"
 					onclick="toggleNSTCProject()">X</button>
 
-				<div class="col-span-full">
-					<label>title: <input type="text" id="editTitle" name="title" value=""
+				<div class="col-span-full mt-2">
+					<label>Title: <input type="text" id="editTitle" name="title" value=""
 							class="border border-black w-5/6"> </label>
+				</div>
+
+				<div class="col-span-full">
+					<label>Code: <input type="text" id="editCode" name="code" value="" class="border border-black w-5/6">
+					</label>
 				</div>
 
 				<div>
@@ -110,10 +115,6 @@
 					</label>
 				</div>
 
-				<div>
-					<label>Code: <input type="text" id="editCode" name="code" value="" class="border border-black">
-					</label>
-				</div>
 
 				<div>
 					<label>Position: <input type="text" id="editPosition" name="position" value="" class="border border-black">
@@ -123,7 +124,7 @@
 				<input class="hidden" type="text" id="editID" name="ID" value="">
 
 				<button type="submit" name="update"
-					class="w-[60px] bg-blue-200 absolute right-1 bottom-2">Submit</button>
+					class="row-start-4 col-start-2 bg-blue-200 hover:bg-blue-400">Submit</button>
 			</form>
 		</div>
 	</div>
@@ -142,11 +143,15 @@
 			<form method="post" action="../upload/nstc-project.php"
 				class="grid grid-cols-3 gap-5 grid-flow-row lg:grid-cols-3">
 
-				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1"
+				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1 hover:bg-blue-400"
 					onclick="toggleInsertModal()">X</button>
 
+				<div class="col-span-full mt-2">
+					<label>Title: <input type="text" name="title" class="border border-black w-5/6"> </label>
+				</div>
+
 				<div class="col-span-full">
-					<label>title: <input type="text" name="title" class="border border-black w-5/6"> </label>
+					<label>Code: <input type="text" name="code" class="border border-black w-5/6"> </label>
 				</div>
 
 				<div>
@@ -157,16 +162,13 @@
 					<label>To: <input type="date" name="date_end" class="border border-black"> </label>
 				</div>
 
-				<div>
-					<label>Code: <input type="text" name="code" class="border border-black"> </label>
-				</div>
 
 				<div>
 					<label>Position: <input type="text" name="position" class="border border-black"> </label>
 				</div>
 
 				<button type="submit" name="insert"
-					class="row-start-4 col-start-2 justify-self-stretch bg-blue-200">
+					class="row-start-4 col-start-2 justify-self-stretch bg-blue-200 hover:bg-blue-400">
 					insert
 				</button>
 			</form>

@@ -97,12 +97,12 @@
 			<form method="post" action="../upload/journal-article.php"
 				class="grid grid-cols-3 gap-5 grid-flow-row lg:grid-cols-3">
 
-				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1"
+				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1 hover:bg-blue-400"
 					onclick="toggleJournalArticle()">X</button>
 
 				<div class="col-span-full">
 					<label>Author: <input type="text" id="editAuthor" name="author" value=""
-							class="border border-black"> </label>
+							class="border border-black w-5/6"> </label>
 				</div>
 				<div class="col-span-full">
 					<label>title: <input type="text" id="editTitle" name="title" value=""
@@ -111,7 +111,7 @@
 
 				<div class="col-span-full">
 					<label>organization: <input type="text" id="editOrganization" name="organization" value=""
-							class="border border-black"> </label>
+							class="border border-black w-5/6"> </label>
 				</div>
 
 				<div class="">
@@ -134,7 +134,9 @@
 				<input class="hidden" type="text" name="ID" id="editID" value="">
 
 				<button type="submit" name="update_paper"
-					class="w-[60px] bg-blue-200 absolute right-1 bottom-2">Submit</button>
+					class="row-start-6 col-start-2 justify-self-stretch bg-blue-200 hover:bg-blue-400">
+					Submit
+				</button>
 			</form>
 		</div>
 	</div>
@@ -153,19 +155,19 @@
 			<form method="post" action="../upload/journal-article.php"
 				class="grid grid-cols-3 gap-5 grid-flow-row lg:grid-cols-3">
 
-				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1"
+				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1 hover:bg-blue-400"
 					onclick="toggleInsertModal()">X</button>
 
-				<div class="col-span-full">
-					<label>Author: <input type="text" name="author" class="border border-black"> </label>
+				<div class="col-span-full mt-2">
+					<label>Author: <input type="text" name="author" class="border border-black w-5/6"> </label>
 				</div>
 
 				<div class="col-span-full">
-					<label>title: <input type="text" name="title" class="border border-black w-5/6"> </label>
+					<label>Title: <input type="text" name="title" class="border border-black w-5/6"> </label>
 				</div>
 
 				<div class="col-span-full">
-					<label>organization: <input type="text" name="organization" class="border border-black"> </label>
+					<label>Organization: <input type="text" name="organization" class="border border-black w-5/6"> </label>
 				</div>
 
 				<div>
@@ -185,7 +187,7 @@
 				</div>
 
 				<button type="submit" name="insert_paper"
-					class="row-start-6 col-start-2 justify-self-stretch bg-blue-200">
+					class="row-start-6 col-start-2 justify-self-stretch bg-blue-200 hover:bg-blue-400">
 					insert
 				</button>
 			</form>
