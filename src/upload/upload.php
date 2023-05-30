@@ -1,10 +1,10 @@
 <?php
 // Include the database configuration file
-include('connection.php');
+include('../connection.php');
 $statusMsg = '';
 
 // File upload path
-$targetDir = "../img/";
+$targetDir = "../../img/";
 $fileName = basename($_FILES["file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
@@ -36,5 +36,5 @@ if (isset($_POST["submit"]) && !empty($_FILES["file"]["name"])) {
 // Display status message
 echo $statusMsg;
 echo 'the site will redirect in 0.5s';
-header('refresh:0.5 url=edit/profile.php');
+header('refresh:0.5 url=../edit/profile.php');
 ?>

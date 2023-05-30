@@ -107,7 +107,7 @@
 
 
 	<div class="max-w-sm w-fit mx-auto mt-10 bg-sky-200 rounded">
-		<form action="../upload.php" method="post" enctype="multipart/form-data"
+		<form action="../upload/upload.php" method="post" enctype="multipart/form-data"
 			class="grid grid-col-1 gap-2 justify-items-center">
 			<div class="font-semibold">Select Image File to Upload</div>
 			<label for="file"

@@ -54,7 +54,7 @@
 
 		<!-- image and information of chair -->
 		<div class="grid grid-cols-2 content-center mx-auto max-h-full w-4/5 mt-20 mb-10">
-			<img src="<?php echo $imageURL; ?>" alt="" class="w-[400px] col-span-1 rounded-full shadow-2xl shadow-black" />
+			<img src="<?php echo $imageURL; ?>" alt="" class="w-3/5 place-self-center col-span-1 rounded shadow-2xl shadow-black" />
 			<?php
 	} else { ?>
 			<div class="flex h-[500rem]">

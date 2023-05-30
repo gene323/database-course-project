@@ -25,6 +25,6 @@
 		header("refresh:0.2 url=edit/profile.php");
 	} else{
 		echo "<h1><center>Login failed. Invalid username or password.</center></h1>";
-		header("refresh:2 url=login.php");
+		header("refresh:2 url=index.php");
 	}
 ?>
