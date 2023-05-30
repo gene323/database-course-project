@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023 年 05 月 25 日 07:22
+-- 產生時間： 2023 年 05 月 30 日 10:48
 -- 伺服器版本： 10.4.28-MariaDB
 -- PHP 版本： 8.2.4
 
@@ -63,7 +63,9 @@ CREATE TABLE `conference_proceeding` (
 
 INSERT INTO `conference_proceeding` (`ID`, `author`, `title`, `date`, `conference`, `page`, `place`) VALUES
 (1, 'Chen, T.H., Chew, C. J., Chen, Y. C., and Lee, J.S.', 'Preserving Collusion-free and Traceability in Car-sharing System based on Blockchain', '2022-12-01', 'International Computer Symposium (ICS 2022)', '1-12', 'National Taipei University of Business'),
-(14, '應瑞傑、蔡國裕、李榮三、周澤捷', 'Mobile Roadside Units Clustering Protocol based on Reputation Inventory', '0000-00-00', 'Cryptology and Information Security Conference ', '', '勤益科技大學 ');
+(14, '應瑞傑、蔡國裕、李榮三、周澤捷', 'Mobile Roadside Units Clustering Protocol based on Reputation Inventory', '2022-06-01', 'Cryptology and Information Security Conference 2022', '', '勤益科技大學 '),
+(21, '紀帛伸、蔡國裕、李榮三', '適用於IoT環境中具隱私保護之輕量化RFID協定之改進', '2020-09-01', '第三十屆全國資訊安全會議', '', '中山大學'),
+(22, 'Jung-San Lee, Chit-Jie Chew, Ying-Chin Chen, Chih-Lung Chen, and Kuo-Yu Tsai', 'Preserving tenacious DDoS vitality via resurrection social hybrid botnet', '2019-12-01', 'The 3rd International Conference on Security with Intelligent Computing and Big-data Services', '', 'ChihLee University of Technology');
 
 -- --------------------------------------------------------
 
@@ -104,7 +106,9 @@ CREATE TABLE `industry_academy_cooperation_project` (
 --
 
 INSERT INTO `industry_academy_cooperation_project` (`title`, `date_begin`, `date_end`, `position`, `ID`) VALUES
-('資安服務專案', '2023-01-01', '2023-12-01', '主持人', 1);
+('資安服務專案', '2023-01-01', '2023-12-01', '主持人', 1),
+('資安服務', '2022-01-01', '2022-12-01', '主持人', 10),
+('111年度學術網路資訊分享與分析暨縣市網資訊安全維運計畫', '2022-01-01', '2022-12-01', '共同主持人', 11);
 
 -- --------------------------------------------------------
 
@@ -128,8 +132,12 @@ CREATE TABLE `journal_article` (
 --
 
 INSERT INTO `journal_article` (`ID`, `author`, `title`, `date`, `page`, `volume`, `number`, `organization`) VALUES
-(4, 'Lee, J.S., Chen, Y. C., Chew, C. J., Hong, W. Z., Fan, Y.Y., Li, B.', 'Constructing Gene Features for Robust 3D Mesh Zero-watermarking', '2023-03-01', '', 73, 0, ''),
-(5, 'Lee, J.S., Chen, Y. C., Hsieh, Y.H., Chang, S.H., and Huynh, N .T.', 'Preserving friendly stacking and weighted shadows in selective scalable secret image sharing,', '2023-02-01', '', 0, 0, '');
+(4, 'Lee, J.S., Chen, Y. C., Chew, C. J., Hong, W. Z., Fan, Y.Y., Li, B.', 'Constructing Gene Features for Robust 3D Mesh Zero-watermarking', '2023-03-01', '', 73, 0, 'Journal of Information Security and Applications'),
+(5, 'Lee, J.S., Chen, Y. C., Hsieh, Y.H., Chang, S.H., and Huynh, N .T.', 'Preserving friendly stacking and weighted shadows in selective scalable secret image sharing,', '2023-02-01', '', 0, 0, 'Accepted byMultimedia Tools and Applications'),
+(367, 'Wu, W.C., Chew, C. J., Chen, Y. C., Wu, C.H., Chen, T.H., and Lee, J.S*.', 'Blockchain-based WDP Solution for Real-time Heterogeneous Computing Resource Allocation', '2022-12-01', '3810-3821', 19, 4, 'IEEE Transactions on Network and Service Management'),
+(368, 'Lee, J.S., Chen, Y. C., Chew, C. J., Chen, C.L., Huynh, T.N., and Kuo, C.W.*', 'CoNN-IDS: Intrusion Detection System based on Collaborative Neural Networks and Agile Training', '2022-11-01', '1-13', 122, 0, 'Computers & Security'),
+(370, 'Lee, J.S., Fan, Y.Y., Lee, H.Y., Yong, G.W., and Chen, Y. C.', 'Image dehazing technique based on sky weight detection and fusion transmission', '2022-09-01', '967-980', 23, 5, 'Journal of Internet Technology'),
+(371, 'Lee, J.S., Chew, C.J. , Liu, J.Y., Chen, Y.C., and Tsai, K.Y.', 'Medical Blockchain: Data Sharing and Privacy Preserving of EHR based on Smart Contract', '2022-03-01', '1-14', 65, 0, 'Journal of Information Security and Applications');
 
 -- --------------------------------------------------------
 
@@ -190,7 +198,9 @@ CREATE TABLE `nstc_project` (
 --
 
 INSERT INTO `nstc_project` (`ID`, `title`, `date_begin`, `date_end`, `position`, `code`) VALUES
-(1, '植基於深度學習之未知網路攻擊暨惡意程式行為偵察技術', '2022-08-01', '2023-07-01', '主持人', 'NSTC111-2221-E-035-053-');
+(1, '植基於深度學習之未知網路攻擊暨惡意程式行為偵察技術', '2022-08-01', '2023-07-01', '主持人', 'NSTC111-2221-E-035-053-'),
+(20, '基於行動裝置之輕量化3D浮水印演算法', '2022-07-01', '2023-02-01', '主持人', '111-2813-C-035-043-E'),
+(21, '具隱密性與回溯性之數位資料監管區塊鏈暨運算資源即時分配平台', '2021-08-01', '2022-07-01', '主持人', 'MOST110-2221-E-035-018- ');
 
 -- --------------------------------------------------------
 
@@ -276,7 +286,7 @@ ALTER TABLE `skill`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `conference_proceeding`
 --
 ALTER TABLE `conference_proceeding`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `image`
@@ -288,25 +298,25 @@ ALTER TABLE `image`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `industry_academy_cooperation_project`
 --
 ALTER TABLE `industry_academy_cooperation_project`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `journal_article`
 --
 ALTER TABLE `journal_article`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=361;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=372;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `nstc_project`
 --
 ALTER TABLE `nstc_project`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `skill`
 --
 ALTER TABLE `skill`
-  MODIFY `serial_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `serial_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- 已傾印資料表的限制式

@@ -51,8 +51,8 @@
 		<?php
 		while ($row = $res->fetch_assoc()) {
 			?>
-			<div class="flex w-full h-24 gap-1">
-				<div class="w-full mb-1 rounded-md bg-slate-200">
+			<div class="flex w-full h-28 gap-1">
+				<div class="w-full mb-1 overflow-auto rounded-md bg-slate-200">
 					<?php echo $i . '. ' ?>
 					<?php echo $row['author'] . ', '; ?>
 					<b class="text-blue-500">

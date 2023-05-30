@@ -52,8 +52,8 @@
 			?>
 
 			<!-- body -->
-			<div class="flex w-full h-24 gap-1">
-				<div class="w-full bg-slate-200 mb-1 rounded-md">
+			<div class="flex w-full h-28 gap-1">
+				<div class="w-full bg-slate-200 mb-1 overflow-auto rounded-md">
 					<?php echo $i . '. ' ?>
 					<?php echo $row['title'] . ', ' ?>
 					<?php $t = strtotime($row['date_begin']);

@@ -52,8 +52,8 @@
 			?>
 
 			<!-- journal article body -->
-			<div class="flex w-full h-24 gap-1">
-				<div class="w-full bg-slate-200 mb-1 rounded-md">
+			<div class="flex w-full h-28 gap-1">
+				<div class="w-full bg-slate-200 mb-1 overflow-auto rounded-md">
 					<?php echo $i . '. ' ?>
 					<?php echo $row['author'] . ',' ?>
 					<b class="text-blue-500">
@@ -100,7 +100,7 @@
 				<button type="button" class="w-[30px] h-[30px] bg-blue-300 rounded-full absolute right-1 top-1 hover:bg-blue-400"
 					onclick="toggleJournalArticle()">X</button>
 
-				<div class="col-span-full">
+				<div class="col-span-full mt-2">
 					<label>Author: <input type="text" id="editAuthor" name="author" value=""
 							class="border border-black w-5/6"> </label>
 				</div>
