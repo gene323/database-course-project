@@ -12,26 +12,64 @@
 		integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 	<script>
 		$(document).ready(() => {
-			const el = document.getElementById("chairName");
+			const name = document.getElementById("chairName");
 			let i = 1;
-			el.addEventListener('click', () => {
+			name.addEventListener('click', () => {
 				if (++i > 5) {
 					document.getElementById('loginModal').style.display = 'block';
 				}
 			})
 
-			const e = document.getElementById('loginModal');
-			e.addEventListener('click', (event) => {
+			const modal = document.getElementById('loginModal');
+			modal.addEventListener('click', (event) => {
 				if (event.target === document.getElementById('loginModal')) {
 					document.getElementById('loginModal').style.display = 'none';
 					i = 0;
 				}
 			}, false);
+
+			const urlParams = new URLSearchParams(window.location.search);
+			if (urlParams.get('loginModal') == 1) {
+				document.getElementById('loginModal').style.display = 'block';
+			}
+			if (urlParams.get('loginFail') == 1) {
+				document.getElementById('wrongHint').style.display = 'block';
+			}
 		});
 	</script>
 </head>
 
 <body>
+
+	<?php
+	include("connection.php");
+	session_start();
+	session_unset();
+	if (isset($_POST['username'])) {
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+
+		$username = stripcslashes($username);
+		$password = stripcslashes($password);
+		$username = $conn->real_escape_string($username);
+		$password = $conn->real_escape_string($password);
+
+		$sql = "SELECT * FROM login WHERE username='$username' AND password='$password'";
+		$res = $conn->query($sql);
+		$row = $res->fetch_assoc();
+		$count = $res->num_rows;
+
+		if ($count == 1) {
+			$_SESSION['username'] = $username;
+			$_SESSION['password'] = $password;
+			header("refresh:0.2 url=edit/profile.php");
+		} else {
+			header("location: index.php?loginModal=1&loginFail=1");
+		}
+	}
+
+	?>
+
 	<!-- header -->
 	<div class="bg-blue-200 w-full h-10">
 		<span class="text-3xl absolute left-[15%]">
@@ -40,9 +78,6 @@
 	</div>
 
 	<?php
-	include("connection.php");
-	session_start();
-	session_unset();
 	// Include the database configuration file
 	// Get images from the database
 	$res = $conn->query("SELECT * FROM image");
@@ -54,7 +89,8 @@
 
 		<!-- image and information of chair -->
 		<div class="grid grid-cols-2 content-center mx-auto max-h-full w-4/5 mt-20 mb-10">
-			<img src="<?php echo $imageURL; ?>" alt="" class="w-3/5 place-self-center col-span-1 rounded shadow-2xl shadow-black" />
+			<img src="<?php echo $imageURL; ?>" alt=""
+				class="w-3/5 place-self-center col-span-1 rounded shadow-2xl shadow-black" />
 			<?php
 	} else { ?>
 			<div class="flex h-[500rem]">
@@ -221,7 +257,8 @@
 	</div>
 
 	<div class="w-full h-full hidden fixed left-0 top-0 z-10 bg-black bg-opacity-70" id="loginModal">
-		<form class="bg-white shadow-md rounded relative px-8 pt-6 pb-8 mb-4 w-96 m-auto top-1/3" id="loginForm" method="POST" action="authentication.php">
+		<form class="bg-white shadow-md rounded relative px-8 pt-6 pb-8 mb-4 w-96 m-auto top-1/3" id="loginForm"
+			method="POST" action="<?=$_SERVER['PHP_SELF'] ?>">
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="username">
 					Username
@@ -238,11 +275,15 @@
 					class="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
 					id="password" name="password" type="password" placeholder="******">
 			</div>
+			<div class="hidden text-red-500 text-center font-semibold mb-6" id="wrongHint">
+				Wrong username or password
+			</div>
 			<div class="flex items-center justify-between">
 				<input
 					class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 					type="submit" value="Sign In">
-				<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="https://youtu.be/pEg_d2f6myw">
+				<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+					href="https://youtu.be/pEg_d2f6myw">
 					Forgot Password?
 				</a>
 			</div>
